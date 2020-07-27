@@ -1,5 +1,9 @@
 package com.github.viktornar.premium.calculator;
 
+import com.github.viktornar.models.CardModel;
+
+import java.util.List;
+
 public class GenericCalculator {
     Calculator calculator;
 
@@ -7,7 +11,8 @@ public class GenericCalculator {
         this.calculator = calculator;
     }
 
-    public double calculate(double sum, double coefficient) {
-        return 0;
+    public double calculate(List<CardModel> cards) {
+        double totalInsuranceSum = calculator.calculateTotalInsuranceSum(cards);
+        return calculator.calculatePremium(totalInsuranceSum);
     }
 }

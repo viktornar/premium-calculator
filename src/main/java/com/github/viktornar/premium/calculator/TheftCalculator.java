@@ -6,10 +6,8 @@ import com.github.viktornar.types.RiskType;
 import java.util.List;
 
 public class TheftCalculator implements Calculator {
-    public static final RiskType CALCULATOR_TYPE = RiskType.THEFT;
-
     @Override
-    public double calculatePremium(double sum, double coefficient) {
+    public double calculatePremium(double sum) {
         return 0;
     }
 
