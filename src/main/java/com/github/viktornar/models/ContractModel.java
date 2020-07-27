@@ -1,13 +1,15 @@
 package com.github.viktornar.models;
 
 import com.github.viktornar.types.StatusType;
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ContractModel {
     private String id;
     private StatusType statusType;
-    private List<CustomerModel> consumers;
+    private List<CustomerModel> customers;
 }

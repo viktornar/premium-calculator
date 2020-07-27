@@ -1,6 +1,6 @@
 package com.github.viktornar.types;
 
-public enum ConsumerType {
+public enum CostumerType {
     UNKNOWN,
     FATHER,
     MOTHER,

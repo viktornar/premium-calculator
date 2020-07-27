@@ -2,10 +2,12 @@ package com.github.viktornar.models;
 
 import com.github.viktornar.types.CardType;
 import com.github.viktornar.types.RiskType;
-import lombok.Data;
+import lombok.*;
 
 @Data
-public class CardModel extends BaseModel {
+@NoArgsConstructor
+@AllArgsConstructor
+public class CardModel {
     private CardType cardType;
     private Double insuredAmount;
     private RiskType riskType;
