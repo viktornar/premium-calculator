@@ -13,4 +13,6 @@ public interface Aggregator {
     Map<RiskType, List<CardModel>> groupCustomersCardsByRiskType(RiskType riskType, List<CustomerModel> customerModel);
 
     Map<RiskType, List<CardModel>> mergeGroupedCustomersCards(List<Map<RiskType, List<CardModel>>> groupedCustomerCards);
+
+    Map<RiskType, List<CardModel>> getGroupedCustomersCards(List<CustomerModel> customers);
 }
