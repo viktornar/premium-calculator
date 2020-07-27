@@ -9,5 +9,5 @@ import java.util.List;
 public class ContractModel {
     private String id;
     private StatusType statusType;
-    private List<ConsumerModel> consumers;
+    private List<CustomerModel> consumers;
 }

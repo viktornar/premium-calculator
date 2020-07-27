@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class ConsumerModel extends BaseModel {
-    ConsumerType consumerType;
-    List<CardModel> cards;
+public class CustomerModel extends BaseModel {
+    private ConsumerType consumerType;
+    private List<CardModel> cards;
 }

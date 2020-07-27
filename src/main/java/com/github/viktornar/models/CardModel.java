@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class CardModel extends BaseModel {
-    CardType cardType;
-    Double insuredAmount;
-    RiskType riskType;
+    private CardType cardType;
+    private Double insuredAmount;
+    private RiskType riskType;
 }
