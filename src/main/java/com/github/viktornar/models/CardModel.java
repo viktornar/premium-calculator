@@ -9,6 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 public class CardModel {
     private CardType cardType;
-    private Double insuredAmount;
+    private Double insuredSum;
     private RiskType riskType;
 }
