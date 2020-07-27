@@ -4,5 +4,5 @@ public enum StatusType {
     UNKNOWN,
     REGISTERED,
     APPROVED,
-    DECLINED
+    DECLINED,
 }
