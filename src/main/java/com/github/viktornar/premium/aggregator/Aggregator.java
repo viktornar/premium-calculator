@@ -8,11 +8,9 @@ import java.util.List;
 import java.util.Map;
 
 public interface Aggregator {
-    Map<RiskType, List<CardModel>> groupCustomerCardsByRiskType(RiskType riskType, CustomerModel customerModel);
+    Map<RiskType, List<CardModel>> groupCustomerCardsByRiskType(CustomerModel customerModel);
 
-    Map<RiskType, List<CardModel>> groupCustomersCardsByRiskType(RiskType riskType, List<CustomerModel> customerModel);
+    Map<RiskType, List<CardModel>> groupCustomersCardsByRiskType(List<CustomerModel> customerModel);
 
     Map<RiskType, List<CardModel>> mergeGroupedCustomersCards(List<Map<RiskType, List<CardModel>>> groupedCustomerCards);
-
-    Map<RiskType, List<CardModel>> getGroupedCustomersCards(List<CustomerModel> customers);
 }
