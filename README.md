@@ -1,5 +1,5 @@
 # Premium calculator
-Calculates premium according contract details ([Demo] (https://learncurve-dev.ey.r.appspot.com/))
+Calculates premium according contract details. You can access precompiled and deployed version of [application](https://learncurve-dev.ey.r.appspot.com/).
 
 # Getting started
 
