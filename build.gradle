@@ -1,3 +1,13 @@
+buildscript {    // Configuration for building
+	repositories {
+		jcenter()    // Bintray's repository - a fast Maven Central mirror & more
+		mavenCentral()
+	}
+	dependencies {
+		classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.2.0' // If a newer version is available, use it
+	}
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.3.2.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
@@ -7,6 +17,7 @@ plugins {
 group = 'com.github.viktornar'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+targetCompatibility = 1.8
 
 configurations {
 	compileOnly {
@@ -18,13 +29,32 @@ repositories {
 	mavenCentral()
 }
 
+
+
+apply plugin: 'com.google.cloud.tools.appengine'
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compile 'com.google.appengine:appengine-api-1.0-sdk:+'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	testCompile 'com.google.appengine:appengine-testing:+'
+	testCompile 'com.google.appengine:appengine-api-stubs:+'
+	testCompile 'com.google.appengine:appengine-tools-sdk:+'
+}
+
+// Always run unit tests
+appengineDeploy.dependsOn test
+appengineStage.dependsOn test
+
+appengine {  // App Engine tasks configuration
+	deploy {   // deploy configuration
+		projectId = System.getenv('GOOGLE_CLOUD_PROJECT')
+		version = '1'
+	}
 }
 
 test {

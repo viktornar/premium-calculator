@@ -1,5 +1,5 @@
 # Premium calculator
-Calculates premium according contract details.
+Calculates premium according contract details ([Demo] (https://learncurve-dev.ey.r.appspot.com/))
 
 # Getting started
 
@@ -67,6 +67,8 @@ curl --location --request POST 'localhost:8080/api/v1/premiumForGivenContract' \
 The source code have compatibility with version 1.8 of java. I have used java 11 but everything should run on java 1.8 as well.
 
 Be aware that I have used lombok so you need to enable annotation preprocessor and also install lombok plugin in your IDE. The reason why I decided to use lombok - the less code and the less boilerplate the better code maintainability.
+
+If you are lazy and do not want to build application you can use [demo](https://learncurve-dev.ey.r.appspot.com/) application deployed to GAE.
 
 # Structure
 
