@@ -6,7 +6,7 @@ import com.github.viktornar.models.CustomerModel;
 import com.github.viktornar.premium.calculator.CalculatorFactory;
 import com.github.viktornar.premium.calculator.NotFoundCalculatorException;
 import com.github.viktornar.types.CardType;
-import com.github.viktornar.types.CostumerType;
+import com.github.viktornar.types.CustomerType;
 import com.github.viktornar.types.RiskType;
 import com.github.viktornar.types.StatusType;
 import org.junit.Assert;
@@ -16,8 +16,6 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ContractPremiumServiceTest {
     private ContractModel contract;
@@ -35,7 +33,7 @@ class ContractPremiumServiceTest {
         List<CustomerModel> customers = Collections.singletonList(
                 new CustomerModel(
                         "Jonas Jonaitis",
-                        CostumerType.FATHER,
+                        CustomerType.FATHER,
                         Arrays.asList(
                                 new CardModel(
                                         CardType.DEBIT,

@@ -44,7 +44,7 @@ curl --location --request POST 'localhost:8080/api/v1/premiumForGivenContract' \
     "customers":[
        {
           "name":"Jonas Jonaitis",
-          "costumerType":"FATHER",
+          "customerType":"FATHER",
           "cards":[
              {
                 "cardType":"DEBIT",

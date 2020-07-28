@@ -1,6 +1,6 @@
 package com.github.viktornar.models;
 
-import com.github.viktornar.types.CostumerType;
+import com.github.viktornar.types.CustomerType;
 import lombok.*;
 
 import java.util.List;
@@ -9,12 +9,12 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 public class CustomerModel extends BaseModel {
-    private CostumerType costumerType;
+    private CustomerType customerType;
     private List<CardModel> cards;
 
-    public CustomerModel(String name, CostumerType costumerType, List<CardModel> cards) {
+    public CustomerModel(String name, CustomerType customerType, List<CardModel> cards) {
         super(name);
-        this.costumerType = costumerType;
+        this.customerType = customerType;
         this.cards = cards;
     }
 }

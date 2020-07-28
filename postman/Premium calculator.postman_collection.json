@@ -28,7 +28,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\":\"LT2078-5252-55\",\n    \"statusType\":\"APPROVED\",\n    \"customers\":[\n       {\n          \"name\":\"Jonas Jonaitis\",\n          \"costumerType\":\"FATHER\",\n          \"cards\":[\n             {\n                \"cardType\":\"DEBIT\",\n                \"insuredSum\":100.0,\n                \"riskType\":\"FRAUD\"\n             },\n             {\n                \"cardType\":\"DEBIT\",\n                \"insuredSum\":8.0,\n                \"riskType\":\"THEFT\"\n             }\n          ]\n       }\n    ]\n }",
+					"raw": "{\n    \"id\":\"LT2078-5252-55\",\n    \"statusType\":\"APPROVED\",\n    \"customers\":[\n       {\n          \"name\":\"Jonas Jonaitis\",\n          \"customerType\":\"FATHER\",\n          \"cards\":[\n             {\n                \"cardType\":\"DEBIT\",\n                \"insuredSum\":100.0,\n                \"riskType\":\"FRAUD\"\n             },\n             {\n                \"cardType\":\"DEBIT\",\n                \"insuredSum\":8.0,\n                \"riskType\":\"THEFT\"\n             }\n          ]\n       }\n    ]\n }",
 					"options": {
 						"raw": {
 							"language": "json"
