@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class ContractModelTest {
-    private final static String CONTRACT_JSON = "{\"id\":\"LT2078-5252-55\",\"statusType\":\"APPROVED\",\"customers\":[{\"name\":\"Jonas Jonaitis\",\"costumerType\":\"FATHER\",\"cards\":[{\"cardType\":\"DEBIT\",\"insuredAmount\":1000.0,\"riskType\":\"FRAUD\"}]}]}";
+    private final static String CONTRACT_JSON = "{\"id\":\"LT2078-5252-55\",\"statusType\":\"APPROVED\",\"customers\":[{\"name\":\"Jonas Jonaitis\",\"costumerType\":\"FATHER\",\"cards\":[{\"cardType\":\"DEBIT\",\"insuredSum\":1000.0,\"riskType\":\"FRAUD\"}]}]}";
     private ContractModel contract;
     private List<CustomerModel> customers;
 
