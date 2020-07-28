@@ -17,15 +17,11 @@ import java.util.List;
 import java.util.Map;
 
 class AggregatorServiceTest {
-    private ContractModel contract;
     private List<CustomerModel> customers;
     private final AggregatorService aggregatorService = new AggregatorService();
 
     @BeforeEach
     void setUp() {
-        contract = new ContractModel();
-        contract.setId("LT2078-5252-55");
-        contract.setStatusType(StatusType.APPROVED);
         customers = Arrays.asList(
                 new CustomerModel(
                         "Father",
@@ -66,12 +62,10 @@ class AggregatorServiceTest {
                         )
                 )
         );
-
-        contract.setCustomers(customers);
     }
 
     @Test
-    void shouldGroupCustomersCardsByType() {
+    void shouldGroupCustomersCardsByRiskType() {
         Map<RiskType, List<CardModel>> grouped = aggregatorService.groupCustomersCardsByRiskType(customers);
 
         Assert.assertEquals(3, grouped.get(RiskType.FRAUD).size());
