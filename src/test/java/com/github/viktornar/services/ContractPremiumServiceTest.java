@@ -55,7 +55,7 @@ class ContractPremiumServiceTest {
     }
 
     @Test
-    void shouldReturnContractPremium() throws NotFoundCalculatorException {
+    void shouldReturnContractPremium() throws NotFoundCalculatorException, NoCardException, NoCustomerException {
         double premium = contractPremiumService.getContractPremium(contract);
         Assert.assertEquals(2.28, premium, 0.00);
     }

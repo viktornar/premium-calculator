@@ -65,7 +65,7 @@ class AggregatorServiceTest {
     }
 
     @Test
-    void shouldGroupCustomersCardsByRiskType() {
+    void shouldGroupCustomersCardsByRiskType() throws NoCardException {
         Map<RiskType, List<CardModel>> grouped = aggregatorService.groupCustomersCardsByRiskType(customers);
 
         Assert.assertEquals(3, grouped.get(RiskType.FRAUD).size());

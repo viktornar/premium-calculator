@@ -25,10 +25,17 @@ public class ContractPremiumService implements Premium {
     }
 
     @Override
-    public double getContractPremium(ContractModel contract) throws NotFoundCalculatorException {
+    public double getContractPremium(ContractModel contract) throws NotFoundCalculatorException, NoCustomerException, NoCardException {
+        validateContract(contract);
         Map<RiskType, List<CardModel>> groupedCards = this.aggregatorService.groupCustomersCardsByRiskType(contract.getCustomers());
         double premiumFraud = calculatorFactory.getCalculator(RiskType.FRAUD).calculate(groupedCards.get(RiskType.FRAUD));
         double premiumTheft = calculatorFactory.getCalculator(RiskType.THEFT).calculate(groupedCards.get(RiskType.THEFT));
         return MathUtil.round(premiumFraud + premiumTheft, 2);
+    }
+
+    private void validateContract(ContractModel contract) throws NoCustomerException {
+        if (contract.getCustomers() == null) {
+            throw new NoCustomerException("Please provide at least on customer.");
+        }
     }
 }
