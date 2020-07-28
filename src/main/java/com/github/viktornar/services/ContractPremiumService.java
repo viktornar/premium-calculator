@@ -15,8 +15,8 @@ import java.util.Map;
 
 @Service
 public class ContractPremiumService implements Premium {
-    private AggregatorService aggregatorService;
-    private CalculatorFactory calculatorFactory;
+    private final AggregatorService aggregatorService;
+    private final CalculatorFactory calculatorFactory;
 
     @Autowired
     public ContractPremiumService(AggregatorService aggregatorService, CalculatorFactory calculatorFactory) {
