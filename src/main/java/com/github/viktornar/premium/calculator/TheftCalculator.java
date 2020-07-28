@@ -1,7 +1,6 @@
 package com.github.viktornar.premium.calculator;
 
 import com.github.viktornar.models.CardModel;
-import com.github.viktornar.types.RiskType;
 
 import java.util.List;
 
