@@ -4,6 +4,7 @@ import com.github.viktornar.models.CardModel;
 import com.github.viktornar.models.CustomerModel;
 import com.github.viktornar.premium.aggregator.Aggregator;
 import com.github.viktornar.types.RiskType;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
+@Slf4j
 public class AggregatorService implements Aggregator {
     @Override
     public Map<RiskType, List<CardModel>> groupCustomerCardsByRiskType(CustomerModel customerModel) throws NoCardException {
@@ -21,16 +23,22 @@ public class AggregatorService implements Aggregator {
     }
 
     @Override
-    public Map<RiskType, List<CardModel>> groupCustomersCardsByRiskType(List<CustomerModel> customerModel) throws NoCardException {
+    public Map<RiskType, List<CardModel>> groupCustomersCardsByRiskType(List<CustomerModel> customers) throws NoCardException {
+        log.info("Trying to group cards for customers: {}",  customers);
         List<Map<RiskType, List<CardModel>>> groupedCustomerCards =
                 new ArrayList<>();
 
-        for (CustomerModel model : customerModel) {
+        for (CustomerModel model : customers) {
             Map<RiskType, List<CardModel>> riskTypeListMap = groupCustomerCardsByRiskType(model);
+            log.debug("Customer cards by risk type: {}", riskTypeListMap);
             groupedCustomerCards.add(riskTypeListMap);
         }
 
-        return mergeGroupedCustomersCards(groupedCustomerCards);
+        Map<RiskType, List<CardModel>> mergedCards = mergeGroupedCustomersCards(groupedCustomerCards);
+
+        log.info("Grouped customers cards: {}", mergedCards);
+
+        return mergedCards;
     }
 
     @Override
@@ -47,8 +55,9 @@ public class AggregatorService implements Aggregator {
                 );
     }
 
-    private void validateCustomer(CustomerModel customerModel) throws NoCardException {
-        if (customerModel.getCards() == null) {
+    private void validateCustomer(CustomerModel customer) throws NoCardException {
+        if (customer.getCards() == null) {
+            log.error("Card was not provided for customer: {}", customer);
             throw new NoCardException("Please provide at least one card for customer.");
         }
     }
