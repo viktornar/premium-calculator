@@ -83,6 +83,8 @@ I have decided to use strategy and factory patterns so it would be easier to ext
 
 I have used some inheritance at model level and not sure if it is needed. It just a habit that come from hibernate.
 
-Need to write more tests. Basically, I wrote test that covers success scenarios, but didn't write test cases for failure scenarios :(
+Need to write more tests. Basically, I wrote tests that covers success scenarios, but didn't write test cases for failure scenarios :(
 
-Not sure if I'm handling errors in correct way. Basically, I'm using checked exceptions so it is ok to pass them up to controller and display in response if customer is not specified in contract. 
+Not sure if I'm handling errors in correct way. Basically, I'm using checked exceptions so it is ok to pass them up to controller and display in response if customer is not specified in contract.
+
+I like to use enum for separating types of provided components. Some developers do not like to use enum in such case.
