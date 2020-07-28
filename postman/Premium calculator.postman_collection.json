@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "a99c8369-9ce3-4640-ae8d-4062989ca656",
+		"name": "Premium calculator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET version",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /api/v1/premiumForGivenContract",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"LT2078-5252-55\",\n    \"statusType\":\"APPROVED\",\n    \"customers\":[\n       {\n          \"name\":\"Jonas Jonaitis\",\n          \"costumerType\":\"FATHER\",\n          \"cards\":[\n             {\n                \"cardType\":\"DEBIT\",\n                \"insuredSum\":100.0,\n                \"riskType\":\"FRAUD\"\n             },\n             {\n                \"cardType\":\"DEBIT\",\n                \"insuredSum\":8.0,\n                \"riskType\":\"THEFT\"\n             }\n          ]\n       }\n    ]\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/premiumForGivenContract",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"premiumForGivenContract"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
