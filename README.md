@@ -78,7 +78,7 @@ I tried to follow LIFT project structure (so it should be easy to navigate):
 2. **I**dentify code at a glance
 3. **F**lat structure as long as we can
 4. **T**ry to stay DRY (Don't Repeat Yourself) or T-DRY
-
+```
 .
 └── com
     └── github
@@ -116,8 +116,7 @@ I tried to follow LIFT project structure (so it should be easy to navigate):
             │   └── StatusType.java
             └── utils
                 └── MathUtil.java
-
-
+```
 
 # What can be done better
 
