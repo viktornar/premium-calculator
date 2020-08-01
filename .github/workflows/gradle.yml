@@ -1,4 +1,4 @@
-name: Java CI with Gradle (Will deploy to GAE after pull)
+name: Execute tests after every push.
 
 on:
   push:
@@ -20,4 +20,4 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew bootJar
+      run: ./gradlew test
