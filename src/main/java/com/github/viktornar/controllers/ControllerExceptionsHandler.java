@@ -15,18 +15,19 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 @ControllerAdvice
-public class RestValidationExceptionHandler {
+public class ControllerExceptionsHandler {
     @ExceptionHandler(value = {
             NotFoundCalculatorException.class,
             NoCustomerException.class,
             NoCardException.class,
     })
-    @ResponseStatus(HttpStatus.PARTIAL_CONTENT)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     protected ErrorResponse handleValidation(Exception ex, WebRequest request) {
         return new ErrorResponse(
                 ex.getMessage(),
-                HttpStatus.PARTIAL_CONTENT.value(),
+                HttpStatus.BAD_REQUEST.getReasonPhrase(),
+                HttpStatus.BAD_REQUEST.value(),
                 new Timestamp((new Date()).getTime())
         );
     }
@@ -34,6 +35,7 @@ public class RestValidationExceptionHandler {
     @Data
     static class ErrorResponse {
         private final String message;
+        private final String error;
         private final Integer code;
         private final Timestamp timestamp;
     }
