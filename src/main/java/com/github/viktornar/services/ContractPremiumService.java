@@ -45,7 +45,7 @@ public class ContractPremiumService implements Premium {
     private void validateContract(ContractModel contract) throws NoCustomerException {
         if (contract.getCustomers() == null) {
             log.error("Customer was not provided for contract with id: {}", contract.getId());
-            throw new NoCustomerException("Please provide at least on customer.");
+            throw new NoCustomerException("no.customer.exception");
         }
     }
 }

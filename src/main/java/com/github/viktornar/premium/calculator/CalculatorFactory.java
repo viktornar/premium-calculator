@@ -22,7 +22,7 @@ public class CalculatorFactory {
 
         if (genericCalculator == null) {
             log.error("Calculator doesn't exist for type: {}", riskType);
-            throw new NotFoundCalculatorException("Not found calculator for specified risk type.");
+            throw new NotFoundCalculatorException("not.found.calculator");
         }
 
         return genericCalculator;

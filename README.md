@@ -70,6 +70,23 @@ Be aware that I have used lombok so you need to enable annotation preprocessor a
 
 If you are lazy and do not want to build application you can use [demo](https://learncurve-dev.ey.r.appspot.com/) of application that deployed to GAE.
 
+Rest API do some simple validation. Validation error is exposed by using ControllerAdvice. Error messages support localixartion e.g.:
+
+```
+curl --location -H "Accept-Language: lt" --request POST 'localhost:8080/api/v1/premiumForGivenContract' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id":"LT2078-5252-55",
+    "statusType":"APPROVED",
+    "customers":[
+       {
+          "name":"Jonas Jonaitis",
+          "customerType":"FATHER"
+       }
+    ]
+ }'
+```
+
 # Structure
 
 I tried to follow LIFT project structure (so it should be easy to navigate):

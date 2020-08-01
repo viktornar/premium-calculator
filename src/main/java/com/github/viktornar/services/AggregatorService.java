@@ -4,6 +4,7 @@ import com.github.viktornar.models.CardModel;
 import com.github.viktornar.models.CustomerModel;
 import com.github.viktornar.premium.aggregator.Aggregator;
 import com.github.viktornar.types.RiskType;
+import com.github.viktornar.utils.TranslatorUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -58,7 +59,7 @@ public class AggregatorService implements Aggregator {
     private void validateCustomer(CustomerModel customer) throws NoCardException {
         if (customer.getCards() == null) {
             log.error("Card was not provided for customer: {}", customer);
-            throw new NoCardException("Please provide at least one card for customer.");
+            throw new NoCardException(TranslatorUtil.toLocale("no.card.exception"));
         }
     }
 }
